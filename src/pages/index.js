@@ -1,7 +1,8 @@
 import Head from "next/head";
+import Link from "next/link";
 import styles from "../styles/pages/Login.module.css";
 
-export default function Home() {
+export default function Login() {
   return (
     <>
       <Head>
@@ -36,7 +37,10 @@ export default function Home() {
               <button type="submit">
                 Entrar
               </button>
-              <small>Não tem uma conta? <a href="">Cadastre-se aqui!</a></small>
+              <small>
+                Não tem uma conta?
+                <Link href="/register"><a>Cadastre-se aqui!</a></Link>
+              </small>
             </form>
           </div>
         </section>
