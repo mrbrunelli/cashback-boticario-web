@@ -21,6 +21,11 @@ a {
   --grey: #ccc;
 }
 
+label {
+  font-size: 0.8rem;
+  color: var(--secondary);
+}
+
 input {
   width: 100%;
   border: 2px solid var(--grey);
