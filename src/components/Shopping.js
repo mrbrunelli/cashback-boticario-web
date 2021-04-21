@@ -3,6 +3,7 @@ import { SidebarContext } from "../contexts/Sidebar";
 import { useForm } from "react-hook-form";
 import styles from "../styles/components/Shopping.module.css";
 import api from "../services/api";
+import { parseResponseMessage } from "../helpers";
 
 export default function Shopping({ dealerData }) {
   const dealer = JSON.parse(dealerData);
@@ -21,7 +22,7 @@ export default function Shopping({ dealerData }) {
       alert(res.data.toString());
       render("home");
     } catch (e) {
-      alert(e.message);
+      alert(parseResponseMessage(e));
     }
   };
 
@@ -59,7 +60,7 @@ export default function Shopping({ dealerData }) {
             />
             <label>Valor Pedido</label>
             <input
-              {...register("gloss_amount", {required: true, pattern: /\d/g})}
+              {...register("gloss_amount", { required: true, pattern: /\d/g })}
               type="number"
               placeholder="Digite o valor do pedido"
               required

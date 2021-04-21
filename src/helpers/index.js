@@ -43,10 +43,22 @@ export const calculateCashBack = (amount, percent) => {
 };
 
 /**
-   * @param {string} date
-   * @param {string} locale - Ex: pt-BR
-   */
+ * @param {string} date
+ * @param {string} locale - Ex: pt-BR
+ */
 export const formatDate = (date, locale) => {
   const d = new Date(date);
   return d.toLocaleDateString(locale) + " " + d.toLocaleTimeString(locale);
+};
+
+/**
+ * 
+ * @param {object} e 
+ * @param {string} e.message
+ * @param {object} e.response
+ * @param {*} e.response.data
+ * @returns 
+ */
+export const parseResponseMessage = (e) => {
+  return e.response ? String(e.response.data) : String(e.message);
 };

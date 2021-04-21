@@ -2,9 +2,10 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import api from "../services/api";
-import styles from "../styles/pages/Register.module.css";
 import { useForm } from "react-hook-form";
 import { FiArrowLeft } from "react-icons/fi";
+import styles from "../styles/pages/Register.module.css";
+import { parseResponseMessage } from "../helpers";
 
 export default function Register() {
   const { register, handleSubmit } = useForm();
@@ -23,7 +24,7 @@ export default function Register() {
       alert(res.data.toString());
       router.push("/");
     } catch (e) {
-      alert("Erro ao realizar cadastro.");
+      alert(parseResponseMessage(e));
     }
   };
 
@@ -35,7 +36,9 @@ export default function Register() {
       </Head>
       <div className={styles.container}>
         <div>
-          <Link href="/"><FiArrowLeft className={styles.back} /></Link>
+          <Link href="/">
+            <FiArrowLeft className={styles.back} />
+          </Link>
         </div>
         <section className={styles.login}>
           <div className={styles.card}>

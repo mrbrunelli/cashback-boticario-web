@@ -1,6 +1,6 @@
 import styles from "../styles/components/Profile.module.css";
 import { formatBRL, formatCpf } from "../helpers";
-import { FiMail, FiTag, FiUser } from "react-icons/fi";
+import { FiUser } from "react-icons/fi";
 
 export default function Profiler({ dealerData }) {
   const dealer = JSON.parse(dealerData);

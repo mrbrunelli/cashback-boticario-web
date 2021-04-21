@@ -5,6 +5,7 @@ import { useCookies } from "react-cookie";
 import styles from "../styles/pages/Login.module.css";
 import { useForm } from "react-hook-form";
 import api from "../services/api";
+import { parseResponseMessage } from "../helpers";
 
 export default function Login() {
   const [cookie, setCookie] = useCookies(["dealer"]);
@@ -21,7 +22,7 @@ export default function Login() {
       });
       router.push("/home");
     } catch (e) {
-      alert("Erro ao realizar Login.");
+      alert(parseResponseMessage(e));
     }
   };
 

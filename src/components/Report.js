@@ -6,6 +6,7 @@ import {
   calculateDiscountPercent,
   formatBRL,
   formatDate,
+  parseResponseMessage,
 } from "../helpers";
 
 export default function Report({ dealerData }) {
@@ -21,7 +22,7 @@ export default function Report({ dealerData }) {
       });
       return res.data;
     } catch (e) {
-      alert(e.message);
+      alert(parseResponseMessage(e));
     }
   };
 
