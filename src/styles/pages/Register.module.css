@@ -8,8 +8,8 @@
 }
 
 .container section {
+  position: relative;
   height: 100%;
-  width: 50%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -18,18 +18,33 @@
 }
 
 .hello {
+  width: 50%;
   background-color: var(--primary);
   color: var(--light);
   font-size: 2rem;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+
 }
 
 .login {
-  background-color: var(--secondary);
+  width: 50%;
+  /* background-color: var(--secondary); */
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+}
+
+@media (max-width: 763px) {
+  .hello {
+    display: none !important;
+  }
+  .login {
+    width: 100%;
+  }
 }
 
 .card {
   background-color: var(--light);
-  width: 50%;
+  min-width: 300px;
+  max-width: 400px;
   margin: 2rem;
   padding: 2rem;
   border-radius: 5px;
@@ -56,7 +71,12 @@
   filter: brightness(90%);
 }
 
-.card label {
-  font-size: 0.8rem;
-  color: var(--secondary);
+.back {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 999;
+  font-size: 2.5rem;
+  color: var(--light);
+  cursor: pointer;
 }

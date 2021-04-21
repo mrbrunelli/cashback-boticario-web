@@ -9,7 +9,6 @@
 
 .container section {
   height: 100%;
-  width: 50%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -18,18 +17,41 @@
 }
 
 .hello {
+  width: 50%;
   background-color: var(--primary);
   color: var(--light);
   font-size: 2rem;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
 }
 
 .login {
+  width: 50%;
   background-color: var(--secondary);
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.mobileOnly {
+  display: none;
+}
+
+@media (max-width: 763px) {
+  .hello {
+    display: none !important;
+  }
+  .login {
+    width: 100%;
+  }
+  .mobileOnly {
+    display: block;
+    font-size: 2rem;
+    color: var(--light);
+  }
 }
 
 .card {
   background-color: var(--light);
-  width: 50%;
+  min-width: 300px;
+  max-width: 400px;
   margin: 2rem;
   padding: 2rem;
   border-radius: 5px;
