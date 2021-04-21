@@ -1,6 +1,6 @@
 import styles from "../styles/components/Profile.module.css";
-import { formatCpf, formatBRL } from "../helpers";
-import { FiUser } from "react-icons/fi";
+import { formatBRL, formatCpf } from "../helpers";
+import { FiMail, FiTag, FiUser } from "react-icons/fi";
 
 export default function Profiler({ dealerData }) {
   const dealer = JSON.parse(dealerData);
@@ -8,14 +8,19 @@ export default function Profiler({ dealerData }) {
     <>
       <div className={styles.container}>
         <div className={styles.circle}>
-          <FiUser size="3rem" />
+          <FiUser size="5rem" />
         </div>
-        <h1>Perfil</h1>
         <div className={styles.details}>
-          <p><strong>Nome: </strong>{dealer.name}</p>
-          <p><strong>CPF: </strong>{formatCpf(dealer.cpf)}</p>
-          <p><strong>E-mail: </strong>{dealer.email}</p>
-          <p><strong>Saldo Cashback: </strong>{formatBRL(dealer.cashback_amount)}</p>
+          <h2>Olá, {dealer.name}</h2>
+          <h3>
+            Saldo CashBack: &nbsp;
+            <span className={styles.badge}>
+              {formatBRL(dealer.cashback_amount)}
+            </span>
+          </h3>
+          <small>E-mail: {dealer.email}</small>
+          <br />
+          <small>CPF: {formatCpf(dealer.cpf)}</small>
         </div>
       </div>
     </>
