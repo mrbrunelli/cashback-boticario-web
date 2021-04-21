@@ -6,7 +6,7 @@ export default function Login() {
   return (
     <>
       <Head>
-        <title>Login - Boticário</title>
+        <title>Login - O Boticário</title>
         <link rel="shortcut icon" href="/boticario.png" type="image/x-icon" />
       </Head>
       <div className={styles.container}>
@@ -39,7 +39,7 @@ export default function Login() {
               </button>
               <small>
                 Não tem uma conta?
-                <Link href="/register"><a>Cadastre-se aqui!</a></Link>
+                <Link href="/register"><a> Cadastre-se aqui!</a></Link>
               </small>
             </form>
           </div>
