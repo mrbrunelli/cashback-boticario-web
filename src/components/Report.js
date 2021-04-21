@@ -5,6 +5,7 @@ import {
   calculateCashBack,
   calculateDiscountPercent,
   formatBRL,
+  formatDate,
 } from "../helpers";
 
 export default function Report({ dealerData }) {
@@ -42,7 +43,7 @@ export default function Report({ dealerData }) {
           {orders && orders.map((o) => (
             <div className={styles.card}>
               <p>Cód: {o.cod}</p>
-              <small>Data: {o.date}</small>
+              <small>Data: {formatDate(o.date, "pt-BR")}</small>
               <small>
                 Valor Bruto: <strong>{formatBRL(o.gloss_amount)}</strong>
               </small>

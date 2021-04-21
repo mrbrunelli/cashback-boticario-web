@@ -37,7 +37,16 @@ export const calculateDiscountPercent = (bigger, smaller) => {
  * @param {number} amount - Amount value to calculate - Ex: 25
  * @param {number} percent - Percentage of CashBack - Ex: 3
  */
- export const calculateCashBack = (amount, percent) => {
+export const calculateCashBack = (amount, percent) => {
   const percentFormated = 1 - (percent / 100);
   return amount - (amount * percentFormated);
+};
+
+/**
+   * @param {string} date
+   * @param {string} locale - Ex: pt-BR
+   */
+export const formatDate = (date, locale) => {
+  const d = new Date(date);
+  return d.toLocaleDateString(locale) + " " + d.toLocaleTimeString(locale);
 };
