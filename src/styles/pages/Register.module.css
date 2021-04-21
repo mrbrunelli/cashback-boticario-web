@@ -1,0 +1,62 @@
+.container {
+  height: 100vh;
+  background-color: var(--background);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.container section {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hello {
+  background-color: var(--primary);
+  color: var(--light);
+  font-size: 2rem;
+}
+
+.login {
+  background-color: var(--secondary);
+}
+
+.card {
+  background-color: var(--light);
+  width: 50%;
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+.card header {
+  margin-bottom: 1rem;
+}
+
+.card input {
+  margin: 0rem 0 1rem 0;
+}
+
+.card button {
+  margin-bottom: 0.2rem;
+}
+
+.card small a {
+  color: var(--secondary);
+  transition: 200ms;
+}
+
+.card small a:hover {
+  filter: brightness(90%);
+}
+
+.card label {
+  font-size: 0.8rem;
+  color: var(--secondary);
+}
