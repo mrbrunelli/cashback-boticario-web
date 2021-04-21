@@ -6,6 +6,7 @@ import styles from "../styles/pages/Home.module.css";
 import Sidebar from "../components/Sidebar";
 import { SidebarContext } from "../contexts/Sidebar";
 import Profile from "../components/Profile";
+import Shopping from "../components/Shopping";
 
 export default function Home({ data }) {
   const { currentPage } = useContext(SidebarContext);
@@ -23,7 +24,7 @@ export default function Home({ data }) {
         <Sidebar />
         <main>
           {currentPage === "home" && <Profile dealerData={data.dealer} />}
-          {currentPage === "add" && currentPage}
+          {currentPage === "add" && <Shopping dealerData={data.dealer}/>}
           {currentPage === "report" && currentPage}
         </main>
       </div>
