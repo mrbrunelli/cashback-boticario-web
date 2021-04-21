@@ -7,12 +7,14 @@ import Sidebar from "../components/Sidebar";
 import { SidebarContext } from "../contexts/Sidebar";
 import Profile from "../components/Profile";
 import Shopping from "../components/Shopping";
+import Report from "../components/Report";
 
 export default function Home({ data }) {
-  const { currentPage } = useContext(SidebarContext);
+  const { currentPage, render } = useContext(SidebarContext);
   const router = useRouter();
 
   useEffect(() => {
+    render("home");
     if (!haveCookies(data.dealer)) {
       router.push("/");
     }
@@ -24,8 +26,8 @@ export default function Home({ data }) {
         <Sidebar />
         <main>
           {currentPage === "home" && <Profile dealerData={data.dealer} />}
-          {currentPage === "add" && <Shopping dealerData={data.dealer}/>}
-          {currentPage === "report" && currentPage}
+          {currentPage === "add" && <Shopping dealerData={data.dealer} />}
+          {currentPage === "report" && <Report dealerData={data.dealer} />}
         </main>
       </div>
     </>
