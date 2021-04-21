@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useRouter } from "next/router";
 import SideNav, { NavIcon, NavItem, NavText } from "@trendmicro/react-sidenav";
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
-import { FiHome, FiPlus, FiShoppingCart, FiLogOut } from "react-icons/fi";
+import { FiHome, FiLogOut, FiPlus, FiShoppingCart } from "react-icons/fi";
 import { SidebarContext } from "../contexts/Sidebar";
 import { useCookies } from "react-cookie";
 import styles from "../styles/components/Sidebar.module.css";
@@ -15,7 +15,7 @@ export default function Sidebar() {
   const logOut = () => {
     removeCookie("dealer");
     router.push("/");
-  }
+  };
 
   return (
     <SideNav
@@ -24,7 +24,7 @@ export default function Sidebar() {
     >
       <SideNav.Toggle />
       <SideNav.Nav defaultSelected={currentPage}>
-        <NavItem eventKey="home">
+        <NavItem eventKey="home" active={currentPage === "home"}>
           <NavIcon>
             <FiHome size="1rem" />
           </NavIcon>
@@ -32,7 +32,7 @@ export default function Sidebar() {
             Home
           </NavText>
         </NavItem>
-        <NavItem eventKey="add">
+        <NavItem eventKey="add" active={currentPage === "add"}>
           <NavIcon>
             <FiPlus />
           </NavIcon>
@@ -40,7 +40,7 @@ export default function Sidebar() {
             Cadastrar Compra
           </NavText>
         </NavItem>
-        <NavItem eventKey="report">
+        <NavItem eventKey="report" active={currentPage === "report"}>
           <NavIcon>
             <FiShoppingCart />
           </NavIcon>
