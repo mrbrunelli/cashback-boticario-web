@@ -34,9 +34,14 @@ export default function Login() {
       <div className={styles.container}>
         <section className={styles.hello}>
           <h1>O Boticário</h1>
-          <h4>Frete GRÁTIS em todas as compras</h4>
+          <h4>
+            Frete <i>GRÁTIS</i> em todas as compras.
+          </h4>
         </section>
         <section className={styles.login}>
+          <div className={styles.mobileOnly}>
+            <h1>O Boticário</h1>
+          </div>
           <div className={styles.card}>
             <header>
               <h1>Faça seu Login</h1>
@@ -63,7 +68,7 @@ export default function Login() {
               <small>
                 Não tem uma conta?
                 <Link href="/register">
-                  <a> Cadastre-se aqui!</a>
+                  <a>&nbsp;Cadastre-se aqui!</a>
                 </Link>
               </small>
             </form>
