@@ -19,7 +19,7 @@ export default function Shopping({ dealerData }) {
         },
       });
       alert(res.data.toString());
-      // render("home");
+      render("home");
     } catch (e) {
       alert(e.message);
     }
