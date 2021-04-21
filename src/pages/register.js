@@ -1,8 +1,10 @@
 import Head from "next/head";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import api from "../services/api";
 import styles from "../styles/pages/Register.module.css";
 import { useForm } from "react-hook-form";
+import { FiArrowLeft } from "react-icons/fi";
 
 export default function Register() {
   const { register, handleSubmit } = useForm();
@@ -32,6 +34,9 @@ export default function Register() {
         <link rel="shortcut icon" href="/boticario.png" type="image/x-icon" />
       </Head>
       <div className={styles.container}>
+        <div>
+          <Link href="/"><FiArrowLeft className={styles.back} /></Link>
+        </div>
         <section className={styles.login}>
           <div className={styles.card}>
             <header>
@@ -48,7 +53,7 @@ export default function Register() {
               />
               <label>CPF</label>
               <input
-                {...register("cpf", { pattern: /\d{11}/g})}
+                {...register("cpf", { pattern: /\d{11}/g })}
                 type="text"
                 maxLength="11"
                 minLength="11"
@@ -79,8 +84,10 @@ export default function Register() {
           </div>
         </section>
         <section className={styles.hello}>
-          <h1>Faça seu cadastro</h1>
-          <h4>E aproveite o melhor em Cosméticos.</h4>
+          <h1>Faça seu Cadastro</h1>
+          <h4>
+            E aproveite as melhores <i>Vantagens.</i>
+          </h4>
         </section>
       </div>
     </>
