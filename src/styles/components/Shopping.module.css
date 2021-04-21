@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 0 3.5rem;
+}
+
+.form input {
+  margin-bottom: 1rem;
+}
+
+.form {
+  width: 50%;
+}
+
+@media (min-width: 300px) {
+  .form {
+    width: 75%;
+  }
+}
+
+@media (min-width: 700px) {
+  .form {
+    width: 50%;
+  }
+}
